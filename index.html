@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JJSportswear</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel="icon" href="BG/favicon-16x16.png" type="image/x-icon">
+
+
+    </head>
+    <body>
+
+      <div id="preloader"></div> 
+      
+        <header>
+            <nav class="navbar">
+                <div class="menu-toggle">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+                <div class="nav-right">
+                    <button class="icon-button search-icon">
+                        <img src="BG/Icons.png" alt="Search">
+                    </button>   
+                <div class="nav-right">
+                    <button class="icon-button email-icon">
+                        <img src="BG/Econe2.png" alt="Email">
+                    </button>
+
+                    
+                    <div class="search-modal" id="searchModal">
+                        <div class="search-modal-content">
+                            <span class="close-search">&times;</span>
+                            <img src="BG/Llogo.png" alt="Image" class="search-image">
+                            <form id="searchForm">
+                                <input type="text" id="searchInput" placeholder="Search Store Location">
+                                <button class="button">
+                                  <span class="button-content">Search </span>
+                                </button>
+                                
+                            </form>
+                        </div>
+                        <!-- non found -->
+                        <div id="nothingFoundModal" class="modal">
+                            <div class="modal-content">
+                                <span class="close">&times;</span>
+                                <h2>Nothing Found</h2>
+                                <p>Sorry, we couldn't find any results for your location.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Modal for shop details -->
+                        <div id="shopDetailsModal" class="modal">
+                            <div class="modal-content">
+                                <span class="close">&times;</span>
+                                <img id="shopImage" src="" alt="Shop Image">
+                                <h2 id="shopName"></h2>
+                                <p id="shopDetails"></p>
+                            </div>
+                        </div>
+                </div>
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="index.html">HOME</a></li>
+                    <li class="nav-item"><a href="#">DESIGNS</a></li>
+                    <li class="nav-item"><a href="Store.html">STORE</a></li>
+                    <li class="nav-item"><a href="SizeChart.html">SIZE CHART</a></li>
+                    <li class="nav-item"><a href="Contacs.html">CONTACTS</a></li>
+                    <li class="nav-footer">
+                        <a href="https://www.facebook.com/JennoelJennyl" target="_blank">
+                            <img src="BG/FBL.png" alt="Facebook">
+                        </a>
+                        <a href="https://instagram.com" target="_blank">
+                            <img src="BG/FIG.png" alt="Instagram">
+                        </a>
+                    </li>
+                </ul>
+                <div class="logo">
+                  <a href="index.html">
+                    <img src="BG/Llogo.png" alt="Logo">
+                  </a>
+                </div>
+            </nav>
+            <div class="email-modal" id="emailModal">
+                <div class="email-modal-content">
+                    <span class="close">&times;</span>
+                    <img src="BG/Llogo.png" alt="Logo" class="modal-logo">  
+                    <h2>Subscribe to our Newsletter</h2>
+                    <form id="emailForm">
+                        <input type="email" id="emailInput" placeholder=" Enter Your Email" required>
+                        <button class="button-content">
+                          <div class="email-modal"></div>
+                            <span>Subscribe</span>
+                          </button>
+                        
+                        </button>
+                    <p id="emailError" class="error-message"></p>
+                <p id="successMessage" class="success-message" style="display: none;">Thank You For Signing Up!</p>
+                </div>
+            </div>
+        </header>
+        
+        <div class="slideshow-container">
+            <div class="mySlides fade">
+                <img src="BG/nb (2).jpg" style="width:100%">
+            </div>
+            <div class="mySlides fade">
+                <img src="BG/nb (3).jpg" style="width:100%">
+            </div>
+            <div class="mySlides fade">
+                <img src="BG/nb (4).jpg" style="width:100%">
+            </div>
+            <div class="mySlides fade">
+                <img src="BG/nb (5).jpg" style="width:100%">
+            </div>
+            <div class="mySlides fade">
+                <img src="BG/nb (7).jpg" style="width:100%">
+            </div>
+            <div class="mySlides fade">
+                <img src="BG/nb8.png" style="width:100%">
+            </div> 
+            <br>
+            <h1>FEATURED DESIGNS</h1>
+            <!--FD Row 1-->
+            <div class="gallery">
+              <div class="item" onclick="openQuickView('BG/RD1.png', 'Red Bull Statement')">
+                <img src="BG/RD1.png" alt="Design img">
+                <div class="item-info">
+                  <p class="hover-text">Quick View</p>
+                </div>
+                <div class="details">
+                  <p class="shirt-name">Red Bull Statement</p>
+                  <p class="extra-details">Xs/S/M/L/XL</p>
+                </div>
+              </div>
+              <div class="item" onclick="openQuickView('BG/RD2.png', 'Sharky Red')">
+                <img src="BG/RD2.png" alt="Design img">
+                <div class="item-info">
+                  <p class="hover-text">Quick View</p>
+                </div>
+                <div class="details">
+                  <p class="shirt-name">Sharky Red</p>
+                  <p class="extra-details">Xs/S/M/L/XL</p>
+                </div>
+              </div>
+              <div class="item" onclick="openQuickView('BG/RD3.png', 'Repaint')">
+                    <img src="BG/RD3.png" alt="Design img">
+                     <div class="item-info">
+                      <p class="hover-text">Quick View</p>
+                     </div>
+                      <div class="details">
+                      <p class="shirt-name">Repaint</p>
+                      <p class="extra-details">Xs/S/M/L/XL</p>
+                   </div>
+             </div>
+            </div>
+            <!--FD Row 2-->
+            <div class="gallery">
+            <div class="item" onclick="openQuickView('BG/RD4.png', 'Sakura')">
+              <img src="BG/RD4.png" alt="Design img">
+              <div class="item-info">
+                <p class="hover-text">Quick View</p>
+              </div>
+              <div class="details">
+                <p class="shirt-name">Blk Sakura</p>
+                <p class="extra-details">Xs/S/M/L/XL</p>
+              </div>
+            </div>
+            <div class="item" onclick="openQuickView('BG/RD5.png', 'Ener Sting')">
+              <img src="BG/RD5.png" alt="Desing img">
+              <div class="item-info">
+                <p class="hover-text">Quick View</p>
+              </div>
+              <div class="details">
+                <p class="shirt-name">Ener Sting</p>
+                <p class="extra-details">Xs/S/M/L/XL</p>
+              </div>
+            </div>
+            <div class="item" onclick="openQuickView('BG/RD6.png', 'Left Shape')">
+                <img src="BG/RD6.png" alt="Clothing Item 2">
+                <div class="item-info">
+                  <p class="hover-text">Quick View</p>
+                </div>
+                <div class="details">
+                  <p class="shirt-name">Left Shape</p>
+                  <p class="extra-details">Xs/S/M/L/XL</p>
+                </div>
+          </div>
+          </div> 
+          <!--content-->
+          <hr>
+          <hr>
+            <br>
+            <h1>DESIGNS</h1>
+            <br>
+            <div class="gallery">
+                <div class="item" onclick="openQuickView('BG/Item 0.png', 'BLK Static')">
+                  <img src="BG/Item 0.png" alt="Design img">
+                  <div class="item-info">
+                    <p class="hover-text">Quick View</p>
+                  </div>
+                  <div class="details">
+                    <p class="shirt-name">BLK Static</p>
+                    <p class="extra-details">Xs/S/M/L/XL</p>
+                  </div>
+                </div>
+                 <!--Row 1-->
+                <div class="item" onclick="openQuickView('BG/item1.png', 'Triado')">
+                  <img src="BG/item1.png" alt="Clothing Item 2">
+                  <div class="item-info">
+                    <p class="hover-text">Quick View</p>
+                  </div>
+                  <div class="details">
+                    <p class="shirt-name">Triado</p>
+                    <p class="extra-details">Xs/S/M/L/XL</p>
+                  </div>
+                </div>
+                <div class="item" onclick="openQuickView('BG/item2.png', 'Shoew Alt')">
+                    <img src="BG/item2.png" alt="Clothing Item 2">
+                    <div class="item-info">
+                      <p class="hover-text">Quick View</p>
+                    </div>
+                    <div class="details">
+                      <p class="shirt-name">Shoew Alt</p>
+                      <p class="extra-details">Xs/S/M/L/XL</p>
+                    </div>
+              </div>
+              <div class="item" onclick="openQuickView('BG/item3.png', 'Blue Co')">
+                <img src="BG/item3.png" alt="Clothing Item 1">
+                <div class="item-info">
+                  <p class="hover-text">Quick View</p>
+                </div>
+                <div class="details">
+                  <p class="shirt-name">Blue Summer</p>
+                  <p class="extra-details">Xs/S/M/L/XL</p>
+                </div>
+              </div>
+               <!--Row 2-->
+              <div class="item" onclick="openQuickView('BG/rhry.png', 'G Como')">
+                <img src="BG/rhry.png" alt="Clothing Item 2">
+                <div class="item-info">
+                  <p class="hover-text">Quick View</p>
+                </div>
+                <div class="details">
+                  <p class="shirt-name">Commo(n)</p>
+                  <p class="extra-details">Xs/S/M/L/XL</p>
+                </div>
+              </div>
+              <div class="item" onclick="openQuickView('BG/item5.png', 'Tianlong')">
+                  <img src="BG/item5.png" alt="Clothing Item 2">
+                  <div class="item-info">
+                    <p class="hover-text">Quick View</p>
+                  </div>
+                  <div class="details">
+                    <p class="shirt-name">Tianlong</p>
+                    <p class="extra-details">Xs/S/M/L/XL</p>
+                  </div>
+                </div>
+                 <!--Row 3-->
+            <div class="item" onclick="openQuickView('BG/item6.png', 'Gamma Vio')">
+              <img src="BG/item6.png" alt="Clothing Item 1">
+              <div class="item-info">
+                <p class="hover-text">Quick View</p>
+              </div>
+              <div class="details">
+                <p class="shirt-name">y2kay</p>
+                <p class="extra-details">Xs/S/M/L/XL</p>
+              </div>
+            </div>
+            <div class="item" onclick="openQuickView('BG/item7.png', 'Techie DB')">
+              <img src="BG/item7.png" alt="Clothing Item 2">
+              <div class="item-info">
+                <p class="hover-text">Quick View</p>
+              </div>
+              <div class="details">
+                <p class="shirt-name">Faulty Techie</p>
+                <p class="extra-details">Xs/S/M/L/XL</p>
+              </div>
+            </div>
+            <div class="item" onclick="openQuickView('BG/rhry2.png', 'DG como')">
+              <img src="BG/rhry2.png" alt="Clothing Item 2">
+              <div class="item-info">
+                <p class="hover-text">Quick View</p>
+              </div>
+              <div class="details">
+                <p class="shirt-name">DG Como</p>
+                <p class="extra-details">Xs/S/M/L/XL</p>
+              </div>
+            </div>
+            <!--Row 4-->
+            <div class="item" onclick="openQuickView('BG/ITEMC 1.png', 'Blue Univ')">
+              <img src="BG/ITEMC 1.png" alt="Clothing Item 1">
+              <div class="item-info">
+                <p class="hover-text">Quick View</p>
+              </div>
+              <div class="details">
+                <p class="shirt-name">Skoblue</p>
+                <p class="extra-details">Xs/S/M/L/XL</p>
+              </div>
+            </div>
+            <div class="item" onclick="openQuickView('BG/ITEMC 2.png', 'Steer Flame')">
+              <img src="BG/ITEMC 2.png" alt="Clothing Item 2">
+              <div class="item-info">
+                <p class="hover-text">Quick View</p>
+              </div>
+              <div class="details">
+                <p class="shirt-name">Steer Flame</p>
+                <p class="extra-details">Xs/S/M/L/XL</p>
+              </div>
+            </div>
+            <div class="item" onclick="openQuickView('BG/ITEMC 3.png', 'Uni Dots')">
+              <img src="BG/ITEMC 3.png" alt="Clothing Item 2">
+              <div class="item-info">
+                <p class="hover-text">Quick View</p>
+              </div>
+              <div class="details">
+                <p class="shirt-name">Uni Dots</p>
+                <p class="extra-details">Xs/S/M/L/XL</p>
+              </div>
+            </div>
+            <!--Row 5-->
+            <div class="item" onclick="openQuickView('BG/ITEMC_5.png', 'Utah Inspired')">
+              <img src="BG/ITEMC_5.png" alt="Clothing Item 2">
+              <div class="item-info">
+                <p class="hover-text">Quick View</p>
+              </div>
+              <div class="details">
+                <p class="shirt-name">Utah Inspired </p>
+                <p class="extra-details">Xs/S/M/L/XL</p>
+              </div>
+            </div>
+            <div class="item" onclick="openQuickView('BG/ITEMC 6.png', 'Purp Raptor')">
+                <img src="BG/ITEMC_6.png" alt="Clothing Item 2">
+                <div class="item-info">
+                  <p class="hover-text">Quick View</p>
+                </div>
+                <div class="details">
+                  <p class="shirt-name">Purp Raptor</p>
+                  <p class="extra-details">Xs/S/M/L/XL</p>
+                </div>
+          </div>
+           <!--Row 6-->
+          <div class="item" onclick="openQuickView('BG/item4.png', 'White Wings')">
+            <img src="BG/item4.png" alt="Clothing Item 1">
+            <div class="item-info">
+              <p class="hover-text">Quick View</p>
+            </div>
+            <div class="details">
+              <p class="shirt-name">Ica White</p>
+              <p class="extra-details">Xs/S/M/L/XL</p>
+            </div>
+        </div>
+          <div class="item" onclick="openQuickView('BG/ITEMC 7.png', 'Jam Recreate')">
+              <img src="BG/ITEMC 7.png" alt="Clothing Item 2">
+              <div class="item-info">
+                <p class="hover-text">Quick View</p>
+              </div>
+              <div class="details">
+                <p class="shirt-name">Jam Recreate</p>
+                <p class="extra-details">Xs/S/M/L/XL</p>
+              </div>
+            </div>
+            <div class="item" onclick="openQuickView('BG/ITEMC_9.png', 'Non Univ')">
+                <img src="BG/ITEMC_9.png" alt="Clothing Item 2">
+                <div class="item-info">
+                  <p class="hover-text">Quick View</p>
+                </div>
+                <div class="details">
+                  <p class="shirt-name">Nova Hazard</p>
+                  <p class="extra-details">Xs/S/M/L/XL</p>
+                </div>
+          </div>
+          <div class="item" onclick="openQuickView('BG/ITEMC 8.png', 'BLK Beard')">
+            <img src="BG/ITEMC 8.png" alt="Clothing Item 1">
+            <div class="item-info">
+              <p class="hover-text">Quick View</p>
+            </div>
+            <div class="details">
+              <p class="shirt-name">BLK Beard</p>
+              <p class="extra-details">Xs/S/M/L/XL</p>
+            </div>
+          </div> 
+           <!--Row 7-->
+          <div class="item" onclick="openQuickView('BG/ITEMD_1.png', 'Gorilla Smoke')">
+            <img src="BG/ITEMD_1.png" alt="Clothing Item 1">
+            <div class="item-info">
+              <p class="hover-text">Quick View</p>
+            </div>
+            <div class="details">
+              <p class="shirt-name">UK Cosmic</p>
+              <p class="extra-details">Xs/S/M/L/XL</p>
+            </div>
+        </div>
+          <div class="item" onclick="openQuickView('BG/ITEMD_3.png', 'Hemp Flowers')">
+              <img src="BG/ITEMD_3.png" alt="Clothing Item 2">
+              <div class="item-info">
+                <p class="hover-text">Quick View</p>
+              </div>
+              <div class="details">
+                <p class="shirt-name">Hemp Flowers</p>
+                <p class="extra-details">Xs/S/M/L/XL</p>
+              </div>
+            </div>
+            <div class="item" onclick="openQuickView('BG/ITEMD_11.png', 'Point Of View')">
+                <img src="BG/ITEMD_11.png" alt="Clothing Item 2">
+                <div class="item-info">
+                  <p class="hover-text">Quick View</p>
+                </div>
+                <div class="details">
+                  <p class="shirt-name">Point Of View</p>
+                  <p class="extra-details">Xs/S/M/L/XL</p>
+                </div>
+            </div>
+            <!--Row 8-->
+            <div class="item" onclick="openQuickView('BG/ITEMD_4.png', 'White Line')">
+              <img src="BG/ITEMD_4.png" alt="Clothing Item 1">
+              <div class="item-info">
+                <p class="hover-text">Quick View</p>
+              </div>
+              <div class="details">
+                <p class="shirt-name">White Line</p>
+                <p class="extra-details">Xs/S/M/L/XL</p>
+              </div>
+          </div>
+            <div class="item" onclick="openQuickView('BG/ITEMD_5.png', 'Shattered Gray')">
+                <img src="BG/ITEMD_5.png" alt="Clothing Item 2">
+                <div class="item-info">
+                  <p class="hover-text">Quick View</p>
+                </div>
+                <div class="details">
+                  <p class="shirt-name">Shattered Gray</p>
+                  <p class="extra-details">Xs/S/M/L/XL</p>
+                </div>
+              </div>
+              <div class="item" onclick="openQuickView('BG/ITEMD_6.png', 'Red Goat')">
+                  <img src="BG/ITEMD_6.png" alt="Clothing Item 2">
+                  <div class="item-info">
+                    <p class="hover-text">Quick View</p>
+                  </div>
+                  <div class="details">
+                    <p class="shirt-name">Red Goat</p>
+                    <p class="extra-details">Xs/S/M/L/XL</p>
+                  </div>
+              </div>
+              <!--Row 9-->
+            <div class="item" onclick="openQuickView('BG/ITEMD_8.png', 'Blue Virus')">
+              <img src="BG/ITEMD_8.png" alt="Clothing Item 1">
+              <div class="item-info">
+                <p class="hover-text">Quick View</p>
+              </div>
+              <div class="details">
+                <p class="shirt-name">kyano Dots</p>
+                <p class="extra-details">Xs/S/M/L/XL</p>
+              </div>
+          </div>
+            <div class="item" onclick="openQuickView('BG/ITEMD_9.png', 'Pink Growl')">
+                <img src="BG/ITEMD_9.png" alt="Clothing Item 2">
+                <div class="item-info">
+                  <p class="hover-text">Quick View</p>
+                </div>
+                <div class="details">
+                  <p class="shirt-name">Pink Growl</p>
+                  <p class="extra-details">Xs/S/M/L/XL</p>
+                </div>
+              </div>
+              <div class="item" onclick="openQuickView('BG/ITEMD_10.png', 'Blue Nebula')">
+                  <img src="BG/ITEMD_10.png" alt="Clothing Item 2">
+                  <div class="item-info">
+                    <p class="hover-text">Quick View</p>
+                  </div>
+                  <div class="details">
+                    <p class="shirt-name">Blue Nebula</p>
+                    <p class="extra-details">Xs/S/M/L/XL</p>
+                  </div>
+              </div>
+          </div>
+
+          <hr>
+          <br>
+              
+               <!-- back to top -->
+                <button id="back-to-top" button class="back-to-top">
+                <svg class="svgIcon" viewBox="0 0 384 512">
+                    <path d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"></path>
+                </svg>
+            </button>
+
+                                                          
+                 <!-- inq modal -->
+
+                 <div id="quick-view-modal" class="modal">
+                  <div class="modal-content">
+                    <span class="close" onclick="closeQuickView()">&times;</span>
+                    <div class="modal-body">
+                      <div class="modal-image-container">
+                        <img id="modal-image" class="modal-image" src="" alt="Quick View Image">
+                      </div>
+                      <div class="modal-details">
+                        <p id="modal-shirt-name" class="shirt-name">Note: You Can Send your preferred Jersey layout</p>
+                        <p id="modal-extra-details" class="extra-details">Xs/S/M/L/XL</p>
+                        <a href="SizeChart.html" class="size-chart-link" target="_blank">See Size Chart</a>
+                        <button class="inquire-btn" onclick="openInquiriesModal()">Inquire Now</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- Inquiries Modal -->
+                <div id="inquiries-modal" class="modal">
+                  <div class="modal-content">
+                    <span class="close" onclick="closeInquiriesModal()">&times;</span>
+                    <div class="social-links">
+                      <a href="https://www.facebook.com/JennoelJennyl" class="social-link"><img src="BG/FBSicon.png" alt="Facebook"></a>
+                      <a href="https://instagram.com/yourshop" class="social-link"><img src="BG/IGSicon.png" alt="Instagram"></a>
+                    </div>
+                    <p class="inquire-text">Choose Where To Inquire</p>
+                  </div>
+                </div>
+                 <br>
+                 <!-- Img grid --> 
+                 <div class="grid-container">
+                  <div class="grid-item"><img src="BG/SLF1.jpg" alt="Image 1"></div>
+                  <div class="grid-item"><img src="BG/SLF2.jpg" alt="Image 2"></div>
+                  <div class="grid-item"><img src="BG/SLF3.jpg" alt="Image 3"></div>
+                  <div class="grid-item"><img src="BG/SLF4.jpg" alt="Image 4"></div>
+                  <div class="grid-item"><img src="BG/SLF5.jpg" alt="Image 5"></div>
+                  <div class="grid-item"><img src="BG/SLF (1Z).jpg" alt="Image 5"></div>
+                </div>
+
+                <div class="formatted-text">
+                  At JJS, We believe that quality is more <br>
+                  important than quantity. Each piece we make is carefully crafted<br>
+                  to be the best it can be. We focus on creating<br>
+                  products that last.
+                  <span class="underline"></span>
+                </div>
+
+                <div class="newsletter-container">
+                  <div class="newsletter-title">Newsletter</div>
+                  <div class="newsletter-subtitle">Stay updated with us!</div>
+                  <div class="newsletter-form">
+                    <img src="BG/NSIG.png" alt="email icon">
+                    <input type="email" id="newsletterFormInput" placeholder="your@email.com">
+                    <button type="submit" id="submit-button">➔</button>
+                  </div>
+                </div>
+          <br>
+          <br>
+          <!-- Footer --> 
+          <div class="footer">
+            <a href="index.html">HOME</a>
+            <a href="">DESIGNS</a>
+            <a href="Store.html">STORE</a>
+            <a href="SizeChart.html">SIZE CHART</a>
+            <a href="Contacs.html">CONTACTS</a>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/JennoelJennyl"><img src="BG/FBSicon.png" alt="Facebook"></a>
+                <a href="#"><img src="BG/IGSicon.png" alt="Instagram"></a>
+            </div>
+            <a href="TC.html">Terms and Conditions</a>
+            <a href="PP.html">Privacy Policy</a>
+            <p>&copy; 2024, JJSportswear</p>
+        </div>
+        
+
+        <script src="scripts.js"></script>
+
+    </body>
+    </html>
+    
